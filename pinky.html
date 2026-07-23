@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pinky 💗</title>
+
+    <link rel="stylesheet" href="pinky.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background-hearts"></div>
+
+    <div class="memory-card">
+
+        <button class="back-btn" onclick="goBack()">
+            ← Back
+        </button>
+
+        <h1>💗 Pinky</h1>
+
+        <img src="pinky.jpg" alt="Pinky">
+
+        <div class="message">
+
+            <h2>My Pinky ❤️</h2>
+
+            <p>
+
+                Your First Teddy Bear in Valentine's Day!
+
+                <br><br>
+
+                Hello, Baby! This is your Baby PINKY! 💗
+                I don't know where I am right now, but I hope you're always safe. I'll always be watching over you and cheering you on from behind, no matter where you go. 🥹❤️
+                
+                Sorry if I wasn't bought right away. JM didn't have a job yet back then, so he was still broke. 😆 But I'm really happy that, in the end, JM chose me to be yours. 💕
+                
+                Joke aside... Happy 22nd Monthsary, Baby! Thank you for loving us—especially your JM. I hope every time you hug me, you'll remember that he's always with you, even when he's not physically beside you. I love you! ❤️🐷💗
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+function goBack(){
+
+// Save that Flower has been viewed
+localStorage.setItem("flower","true");
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+    window.location.href="letter.html";
+
+},500);
+
+}
+
+    </script>
+
+    <script>
+        localStorage.setItem("pinky", "true");
+    </script>
+
+</body>
+
+</html>

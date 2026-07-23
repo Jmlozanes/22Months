@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy 22 Monthsary ❤️</title>
+
+    <link rel="stylesheet" href="letter.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="hearts"></div>
+
+<div class="wrapper">
+
+    <h1>❤️ Happy 22 Monthsary ❤️</h1>
+
+    <p class="subtitle">
+        Every picture tells a beautiful memory of us.
+        <br>
+        Tap any memory to continue.
+    </p>
+
+    <div class="gallery">
+
+        <!-- PanPan -->
+        <div class="card" onclick="imageClick('panpan.html')">
+
+            <img src="panpan.jpg" alt="PanPan">
+
+            <div class="overlay">
+
+                <h2>🐼 PanPan</h2>
+
+                <p>Where everything started.</p>
+
+            </div>
+
+        </div>
+
+        <!-- Pinky -->
+        <div class="card" onclick="imageClick('pinky.html')">
+
+            <img src="pinky.jpg" alt="Pinky">
+
+            <div class="overlay">
+
+                <h2>💗 Pinky</h2>
+
+                <p>My favorite person.</p>
+
+            </div>
+
+        </div>
+
+        <!-- First Outing -->
+        <div class="card" onclick="imageClick('outing.html')">
+
+            <img src="outing.jpg" alt="Outing">
+
+            <div class="overlay">
+
+                <h2>🌸 First Outing</h2>
+
+                <p>A day I'll never forget.</p>
+
+            </div>
+
+        </div>
+
+        <!-- First Flower -->
+        <div class="card" onclick="imageClick('flower.html')">
+
+            <img src="flower.jpg" alt="Flower">
+
+            <div class="overlay">
+
+                <h2>🌹 First Flower</h2>
+
+                <p>Just the beginning of many more.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Hidden Continue Button -->
+    <div id="finalButton" style="display:none; text-align:center; margin-top:40px;">
+        <button onclick="window.location.href='surprise.html'"
+            style="
+                padding:15px 40px;
+                font-size:20px;
+                font-weight:bold;
+                background:#ff4f8b;
+                color:white;
+                border:none;
+                border-radius:50px;
+                cursor:pointer;
+                transition:0.3s;
+                box-shadow:0 8px 20px rgba(0,0,0,.2);
+            "
+            onmouseover="this.style.transform='scale(1.05)'"
+            onmouseout="this.style.transform='scale(1)'">
+            ❤️ Continue ❤️
+        </button>
+    </div>
+
+</div>
+
+<script src="letter.js"></script>
+
+</body>
+</html>

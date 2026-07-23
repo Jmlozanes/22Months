@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PanPan ❤️</title>
+
+    <link rel="stylesheet" href="panpan.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="background-hearts"></div>
+
+    <div class="memory-card">
+
+        <button class="back-btn" onclick="goBack()">
+            ← Back
+        </button>
+
+        <h1>🐼 PanPan</h1>
+
+        <img src="panpan.jpg" alt="PanPan">
+
+        <div class="message">
+
+            <h2>Our Beginning ❤️</h2>
+
+            <p>
+
+                Your First teddy you receive from me!
+
+                <br><br>
+
+                Hello, Baby! This is your PANPAN! 🐼
+My representative animal. Lazy, lovable, and happiest when it's peaceful and quiet. I love eating and sleeping.
+
+Whenever you're feeling lonely, just remember me—your PANPAN! Even if I'm not around, I'll always be by your side, cheering you on and loving you from wherever I am. ❤️
+
+HAPPY 22ND MONTHSARY!!
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+function goBack(){
+
+// Save that Flower has been viewed
+localStorage.setItem("flower","true");
+
+document.body.style.opacity="0";
+
+setTimeout(()=>{
+
+    window.location.href="letter.html";
+
+},500);
+
+}
+
+    </script>
+
+    <script>
+        localStorage.setItem("panpan", "true");
+    </script>
+
+</body>
+
+</html>

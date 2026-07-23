@@ -1,0 +1,284 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:linear-gradient(135deg,#ffe6ef,#fff4f8,#fffdfd);
+
+    overflow-x:hidden;
+
+    transition:opacity .5s ease;
+
+}
+
+/* ===========================
+   FLOATING HEART BACKGROUND
+=========================== */
+
+.background-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.08;
+
+    background-image:
+    radial-gradient(#ff6f91 2px, transparent 2px);
+
+    background-size:70px 70px;
+
+    animation:moveBackground 15s linear infinite;
+
+}
+
+@keyframes moveBackground{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-70px);
+
+    }
+
+}
+
+/* ===========================
+   MAIN CARD
+=========================== */
+
+.memory-card{
+
+    position:relative;
+
+    width:min(850px,95%);
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+    animation:fadeUp .8s ease;
+
+    z-index:2;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   BACK BUTTON
+=========================== */
+
+.back-btn{
+
+    position:absolute;
+
+    top:20px;
+
+    left:20px;
+
+    border:none;
+
+    background:#ff5b86;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-btn:hover{
+
+    background:#ff3f6f;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.memory-card h1{
+
+    text-align:center;
+
+    color:#ff4d79;
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.memory-card img{
+
+    width:100%;
+
+    max-height:480px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    display:block;
+
+    margin:0 auto 30px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+}
+
+.memory-card img:hover{
+
+    transform:scale(1.02);
+
+}
+
+/* ===========================
+   MESSAGE
+=========================== */
+
+.message{
+
+    text-align:center;
+
+}
+
+.message h2{
+
+    color:#ff5b86;
+
+    margin-bottom:18px;
+
+    font-size:1.8rem;
+
+}
+
+.message p{
+
+    color:#555;
+
+    line-height:2;
+
+    font-size:17px;
+
+    white-space:pre-line;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:20px 15px;
+
+    }
+
+    .memory-card{
+
+        padding:25px;
+
+    }
+
+    .memory-card img{
+
+        max-height:300px;
+
+    }
+
+    .message h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .message p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+    }
+
+    .back-btn{
+
+        font-size:14px;
+
+        padding:8px 15px;
+
+    }
+
+}

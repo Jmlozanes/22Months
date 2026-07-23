@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Flower 🌼</title>
+
+    <link rel="stylesheet" href="flower.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="paper">
+
+    <button class="back-btn" onclick="goBack()">
+        ← Back
+    </button>
+
+    <h1>🌼 My First Flower 🌼</h1>
+
+    <p class="subtitle">
+        "Not perfect... but made with love."
+    </p>
+
+    <div class="photo">
+
+        <img src="flower.jpg" alt="Flower Drawing">
+
+    </div>
+
+    <div class="letter">
+
+        <h2>For My Baby ❤️</h2>
+
+        <p>
+
+            This is the very first flower I drew for you.
+
+            <br><br>
+
+            It isn't perfect.
+            Maybe the petals aren't equal.
+            Maybe the colors aren't the prettiest.
+            but the color of yout dream flower is here!
+
+            <br><br>
+
+            But every line was drawn while thinking of you.
+            every cut it flowless for not damaging the flower
+
+            <br><br>
+
+            I hope that every flower I give you,
+            whether it's drawn, real, or just imagined,
+            reminds you how much I love you.
+
+            <br><br>
+
+            Happy 22nd Monthsary, Baby. 🌼❤️
+
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+
+// Save that Flower has been viewed
+localStorage.setItem("flower", "true");
+
+// After 15 seconds, go to Last.html
+setTimeout(() => {
+
+    document.body.style.opacity = "0";
+
+    setTimeout(() => {
+        window.location.href = "Last.html";
+    }, 800);
+
+}, 15000);
+
+</script>
+
+</script>
+    <script>
+        localStorage.setItem("flower", "true");
+    </script>
+</body>
+
+</html>
