@@ -1,4 +1,211 @@
 /* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #fff7fb,
+        #ffe4ee,
+        #ffd5e3
+    );
+
+}
+
+
+
+/* ===========================
+   FLOATING HEART BACKGROUND
+=========================== */
+
+
+.background-hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+}
+
+
+.background-hearts span{
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#ff6b8b;
+
+    transform:rotate(45deg);
+
+    opacity:.15;
+
+    animation:
+    floatHeart 12s linear infinite;
+
+}
+
+
+.background-hearts span::before,
+.background-hearts span::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    background:#ff6b8b;
+
+    border-radius:50%;
+
+}
+
+
+.background-hearts span::before{
+
+    left:-9px;
+
+}
+
+
+.background-hearts span::after{
+
+    top:-9px;
+
+}
+
+
+.background-hearts span:nth-child(1){
+    left:10%;
+    top:100%;
+}
+
+.background-hearts span:nth-child(2){
+    left:30%;
+    top:100%;
+    animation-delay:3s;
+}
+
+.background-hearts span:nth-child(3){
+    left:50%;
+    top:100%;
+    animation-delay:5s;
+}
+
+.background-hearts span:nth-child(4){
+    left:75%;
+    top:100%;
+    animation-delay:7s;
+}
+
+.background-hearts span:nth-child(5){
+    left:90%;
+    top:100%;
+    animation-delay:9s;
+}
+
+
+
+@keyframes floatHeart{
+
+
+from{
+
+    transform:
+    translateY(0)
+    rotate(45deg);
+
+}
+
+
+to{
+
+    transform:
+    translateY(-120vh)
+    rotate(405deg);
+
+    opacity:0;
+
+}
+
+}
+
+
+
+/* ===========================
+   TEXT
+=========================== */
+
+
+.container{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+}
+
+
+.title{
+
+    color:#ff4f79;
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    margin-bottom:10px;
+
+}
+
+
+.subtitle{
+
+    color:#777;
+
+    margin-bottom:40px;
+
+}
+
+
+.click-text{
+
+    margin-top:35px;
+
+    color:#ff5f86;
+
+    font-weight:600;
+
+}
+
+
+
+/* ===========================
    ENVELOPE
 =========================== */
 
@@ -6,89 +213,140 @@
 .envelope-wrapper{
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
 }
 
 
+
 .envelope{
+
 
     position:relative;
 
-    width:420px;
-    height:300px;
+
+    width:min(90vw,430px);
+
+    aspect-ratio:1.35;
+
 
     cursor:pointer;
 
+
     perspective:1200px;
 
-    animation:floatEnvelope 3s ease-in-out infinite;
+
+    animation:
+    floatingEnvelope 3s ease-in-out infinite;
+
 
 }
 
 
 
-@keyframes floatEnvelope{
+@keyframes floatingEnvelope{
 
-    0%,100%{
-        transform:translateY(0);
-    }
 
-    50%{
-        transform:translateY(-12px);
-    }
+0%,100%{
+
+transform:
+translateY(0);
 
 }
 
 
-/* BACK */
+50%{
 
-.back{
+transform:
+translateY(-10px);
+
+}
+
+
+}
+
+
+
+/* ===========================
+   BACK
+=========================== */
+
+
+.envelope-back{
+
 
     position:absolute;
 
+
     inset:0;
 
-    background:#ff9db7;
 
-    border-radius:15px;
+    background:
+
+    linear-gradient(
+        145deg,
+        #ffb9cc,
+        #ff8fad
+    );
+
+
+    border-radius:12px;
+
+
+    border:6px solid #ff86a5;
+
 
     box-shadow:
-    0 25px 40px rgba(0,0,0,.18);
+
+    0 25px 40px rgba(0,0,0,.15);
+
 
 }
 
 
 
-/* LETTER */
+/* ===========================
+   LETTER
+=========================== */
 
 
 .letter{
 
+
     position:absolute;
+
 
     left:50%;
 
-    bottom:25px;
+
+    bottom:20px;
 
 
-    width:85%;
+    width:86%;
 
-    height:85%;
+
+    height:75%;
+
 
 
     transform:
 
     translateX(-50%)
-    translateY(120px);
+    translateY(130px);
 
-
-    transition:
-    1.8s cubic-bezier(.22,1,.36,1);
 
 
     z-index:2;
+
+
+
+    transition:
+
+    transform 1.8s cubic-bezier(.25,1,.5,1);
+
 
 
 }
@@ -97,36 +355,71 @@
 
 .paper{
 
+
+    width:100%;
+
+
     height:100%;
 
-    background:white;
+
+    background:#fffef8;
+
 
     border-radius:12px;
 
 
-    padding:30px;
 
-
-    text-align:center;
+    overflow:hidden;
 
 
     box-shadow:
 
-    0 15px 30px rgba(0,0,0,.2);
+    0 15px 30px rgba(0,0,0,.15);
+
 
 }
 
 
-.paper h2{
 
-    color:#ff4f79;
+.paper-top{
 
-    margin-bottom:20px;
+
+    height:60px;
+
+
+    background:#fff1a8;
+
+
+    border-radius:
+
+    0 0 40px 40px;
+
 
 }
 
 
-.paper p{
+.paper-content{
+
+
+    padding:25px;
+
+
+}
+
+
+.paper-content h2{
+
+
+    color:#ff5478;
+
+    margin-bottom:15px;
+
+
+}
+
+
+.paper-content p{
+
 
     color:#777;
 
@@ -134,12 +427,13 @@
 
 
 
-
-
-/* FLAP */
+/* ===========================
+   FLAP
+=========================== */
 
 
 .flap{
+
 
     position:absolute;
 
@@ -151,30 +445,37 @@
 
     width:100%;
 
-    height:60%;
+
+    height:55%;
 
 
-    background:#ff7fa2;
+    background:#ff7b99;
 
 
     clip-path:
 
     polygon(
-    0 0,
-    100% 0,
-    50% 100%
+        0 0,
+        100% 0,
+        50% 100%
     );
+
 
 
     transform-origin:top;
 
 
+    z-index:5;
+
+
+
     transition:
 
-    1.2s ease;
+    transform 1.2s ease;
 
 
-    z-index:5;
+
+    transform-style:preserve-3d;
 
 
 }
@@ -182,8 +483,9 @@
 
 
 
-
-/* FRONT */
+/* ===========================
+   FRONT
+=========================== */
 
 
 .front{
@@ -201,29 +503,219 @@
     height:65%;
 
 
-    background:#ffb1c5;
+
+    background:#ffadc3;
+
 
 
     border-radius:
 
-    0 0 15px 15px;
+    0 0 12px 12px;
+
+
+
+    border:5px solid #ff91ae;
 
 
     z-index:4;
+
+
+    overflow:hidden;
+
 
 
 }
 
 
 
-/* OPEN */
+
+.front::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+border:8px solid transparent;
+
+
+border-image:
+
+repeating-linear-gradient(
+
+-45deg,
+
+white 0 10px,
+
+#ff6283 10px 20px
+
+) 10;
+
+
+opacity:.7;
+
+
+}
+
+
+
+
+/* ===========================
+   WAVE
+=========================== */
+
+
+.wave{
+
+
+position:absolute;
+
+
+width:100%;
+
+
+height:12px;
+
+
+top:55%;
+
+
+
+background:
+
+repeating-radial-gradient(
+
+circle at 10px,
+
+#ff4e75 0 5px,
+
+transparent 6px 20px
+
+);
+
+
+}
+
+
+
+
+
+/* ===========================
+   BOW
+=========================== */
+
+
+.bow{
+
+
+position:absolute;
+
+
+left:50%;
+
+
+top:40%;
+
+
+transform:
+
+translate(-50%,-50%);
+
+
+
+display:flex;
+
+
+align-items:center;
+
+
+z-index:2;
+
+
+}
+
+
+
+.left-loop,
+.right-loop{
+
+
+width:38px;
+
+height:28px;
+
+
+background:#ff3762;
+
+
+}
+
+
+
+.left-loop{
+
+
+border-radius:
+
+100% 0 100% 100%;
+
+
+transform:rotate(-15deg);
+
+
+}
+
+
+
+.right-loop{
+
+
+border-radius:
+
+0 100% 100% 100%;
+
+
+transform:rotate(15deg);
+
+
+}
+
+
+
+.center-knot{
+
+
+width:20px;
+
+height:20px;
+
+
+background:#ff174d;
+
+
+border-radius:50%;
+
+
+}
+
+
+
+
+/* ===========================
+   OPEN ANIMATION
+=========================== */
 
 
 .envelope.open{
 
-    animation:
+animation:
 
-    shake .5s;
+shake .5s;
 
 }
 
@@ -231,21 +723,26 @@
 
 @keyframes shake{
 
+
 0%{
 transform:rotate(0);
 }
+
 
 25%{
 transform:rotate(3deg);
 }
 
+
 50%{
 transform:rotate(-3deg);
 }
 
+
 100%{
 transform:rotate(0);
 }
+
 
 }
 
@@ -253,22 +750,50 @@ transform:rotate(0);
 
 .envelope.open .flap{
 
-    transform:
 
-    rotateX(180deg);
+transform:
+
+rotateX(180deg);
+
 
 }
+
 
 
 
 .envelope.open.show-letter .letter{
 
 
-    transform:
+transform:
 
-    translateX(-50%)
+translateX(-50%)
+translateY(-110px);
 
-    translateY(-150px);
+
+}
+
+
+
+/* ===========================
+ MOBILE
+=========================== */
+
+
+@media(max-width:600px){
+
+
+.envelope{
+
+width:320px;
+
+}
+
+
+.title{
+
+font-size:1.7rem;
+
+}
 
 
 }
