@@ -40,11 +40,11 @@ envelope.addEventListener("click", () => {
 
     }, 2500);
 
-    setTimeout(() => {
+setTimeout(() => {
 
-        window.location.href = "letter.html";
+window.location.href = "letter.html";
 
-    }, 3600);
+}, 4500);
 
 });
 
