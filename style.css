@@ -187,11 +187,11 @@ body{
     position:absolute;
 
     left:50%;
-    bottom:20px;
+    bottom:10px;
 
     transform:
         translateX(-50%)
-        translateY(30px);
+        translateY(80px);
 
     width:88%;
     height:82%;
@@ -203,7 +203,7 @@ body{
     z-index:3;
 
     transition:
-        transform 1.8s cubic-bezier(.25,1,.5,1);
+    transform 1.8s cubic-bezier(.25,1,.5,1);
 
 }
 
@@ -421,10 +421,13 @@ body{
    OPEN STATE
 =========================== */
 
-.envelope.open .flap{
+.envelope.open .letter{
 
     transform:
-        rotateX(180deg);
+        translateX(-50%)
+        translateY(-120px);
+
+}
 
 }
 
@@ -467,4 +470,7 @@ body{
 
 }
 
+}
+.envelope.open .letter{
+    z-index:7;
 }
