@@ -1,143 +1,14 @@
 /* ===========================
-   RESET
-=========================== */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Poppins',sans-serif;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    overflow:hidden;
-    background:linear-gradient(180deg,#fff7f9,#ffe5ec,#ffdbe8);
-}
-
-
-/* ===========================
-   BACKGROUND HEARTS
-=========================== */
-
-.background-hearts{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-}
-
-.background-hearts span{
-    position:absolute;
-    width:18px;
-    height:18px;
-    background:#ff6b8b;
-    transform:rotate(45deg);
-    opacity:.12;
-    animation:float 12s linear infinite;
-}
-
-.background-hearts span::before,
-.background-hearts span::after{
-    content:"";
-    position:absolute;
-    width:18px;
-    height:18px;
-    background:#ff6b8b;
-    border-radius:50%;
-}
-
-.background-hearts span::before{
-    left:-9px;
-}
-
-.background-hearts span::after{
-    top:-9px;
-}
-
-
-.background-hearts span:nth-child(1){
-    left:10%;
-    top:90%;
-}
-
-.background-hearts span:nth-child(2){
-    left:25%;
-    top:100%;
-    animation-delay:2s;
-}
-
-.background-hearts span:nth-child(3){
-    left:50%;
-    top:95%;
-    animation-delay:4s;
-}
-
-.background-hearts span:nth-child(4){
-    left:70%;
-    top:100%;
-    animation-delay:6s;
-}
-
-.background-hearts span:nth-child(5){
-    left:88%;
-    top:90%;
-    animation-delay:8s;
-}
-
-
-@keyframes float{
-
-    from{
-        transform:translateY(0) rotate(45deg);
-    }
-
-    to{
-        transform:translateY(-120vh) rotate(405deg);
-        opacity:0;
-    }
-
-}
-
-
-/* ===========================
-   TEXT
-=========================== */
-
-.container{
-    position:relative;
-    z-index:2;
-    text-align:center;
-    padding:20px;
-}
-
-.title{
-    color:#ff4f79;
-    font-size:clamp(1.8rem,4vw,2.6rem);
-}
-
-.subtitle{
-    color:#777;
-    margin-bottom:35px;
-}
-
-.click-text{
-    margin-top:30px;
-    color:#ff6b8b;
-    font-weight:600;
-}
-
-
-/* ===========================
    ENVELOPE
 =========================== */
 
+
 .envelope-wrapper{
+
     display:flex;
     justify-content:center;
+    align-items:center;
+
 }
 
 
@@ -145,45 +16,52 @@ body{
 
     position:relative;
 
-    width:min(88vw,420px);
-    aspect-ratio:1.35;
+    width:420px;
+    height:300px;
 
     cursor:pointer;
 
     perspective:1200px;
 
+    animation:floatEnvelope 3s ease-in-out infinite;
+
 }
 
 
-/* ===========================
-   BACK
-=========================== */
+
+@keyframes floatEnvelope{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
 
 
-.envelope-back{
+/* BACK */
+
+.back{
 
     position:absolute;
 
     inset:0;
 
-    background:
-    linear-gradient(
-        135deg,
-        #ffb6c9,
-        #ff95b0
-    );
+    background:#ff9db7;
 
-    border:6px solid #ff8aa7;
+    border-radius:15px;
 
-    border-radius:8px;
+    box-shadow:
+    0 25px 40px rgba(0,0,0,.18);
 
 }
 
 
 
-/* ===========================
-   LETTER
-=========================== */
+/* LETTER */
 
 
 .letter{
@@ -192,78 +70,63 @@ body{
 
     left:50%;
 
-    bottom:0;
+    bottom:25px;
 
-    width:88%;
 
-    height:70%;
+    width:85%;
+
+    height:85%;
 
 
     transform:
+
     translateX(-50%)
-    translateY(90px);
-
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-
-    z-index:3;
+    translateY(120px);
 
 
     transition:
-    transform 1.8s cubic-bezier(.25,1,.5,1);
+    1.8s cubic-bezier(.22,1,.36,1);
+
+
+    z-index:2;
+
 
 }
+
 
 
 .paper{
 
-    width:100%;
-
     height:100%;
 
-    background:#fffef8;
+    background:white;
 
-    border-radius:8px;
-
-    overflow:hidden;
-
-}
+    border-radius:12px;
 
 
-/* ===========================
-   PAPER CONTENT
-=========================== */
+    padding:30px;
 
 
-.paper-top{
+    text-align:center;
 
-    height:55px;
 
-    background:#fff3a8;
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.2);
 
 }
 
 
-.paper-content{
+.paper h2{
 
-    padding:22px;
+    color:#ff4f79;
 
-}
-
-
-.paper-content h2{
-
-    color:#ff5478;
+    margin-bottom:20px;
 
 }
 
 
-.paper-content p{
+.paper p{
 
     color:#777;
 
@@ -271,14 +134,15 @@ body{
 
 
 
-/* ===========================
-   FLAP
-=========================== */
+
+
+/* FLAP */
 
 
 .flap{
 
     position:absolute;
+
 
     top:0;
 
@@ -290,41 +154,49 @@ body{
     height:60%;
 
 
-    background:#ff7b99;
+    background:#ff7fa2;
 
 
-    clip-path:polygon(
-        0 0,
-        100% 0,
-        50% 100%
+    clip-path:
+
+    polygon(
+    0 0,
+    100% 0,
+    50% 100%
     );
 
 
     transform-origin:top;
 
 
-    z-index:6;
-
-
     transition:
-    transform 1.2s ease;
+
+    1.2s ease;
+
+
+    z-index:5;
+
 
 }
 
 
 
-/* ===========================
-   FRONT
-=========================== */
+
+
+/* FRONT */
 
 
 .front{
 
+
     position:absolute;
+
 
     bottom:0;
 
+
     width:100%;
+
 
     height:65%;
 
@@ -332,109 +204,57 @@ body{
     background:#ffb1c5;
 
 
-    border:4px solid #ffa2bb;
+    border-radius:
 
-
-    border-radius:0 0 8px 8px;
+    0 0 15px 15px;
 
 
     z-index:4;
 
-    overflow:hidden;
 
 }
 
 
 
-.front::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    border:8px solid transparent;
+/* OPEN */
 
 
-    border-image:
-    repeating-linear-gradient(
-        -45deg,
-        white 0 10px,
-        #ff5d7f 10px 20px
-    ) 10;
+.envelope.open{
+
+    animation:
+
+    shake .5s;
 
 }
 
 
 
-/* ===========================
-   BOW
-=========================== */
+@keyframes shake{
 
+0%{
+transform:rotate(0);
+}
 
-.bow{
+25%{
+transform:rotate(3deg);
+}
 
-    position:absolute;
+50%{
+transform:rotate(-3deg);
+}
 
-    left:50%;
-
-    top:42%;
-
-    transform:translate(-50%,-50%);
-
-    display:flex;
+100%{
+transform:rotate(0);
+}
 
 }
 
-
-.left-loop,
-.right-loop{
-
-    width:34px;
-    height:26px;
-
-    background:#ff3d63;
-
-}
-
-
-.left-loop{
-
-    border-radius:100% 0 100% 100%;
-
-}
-
-
-.right-loop{
-
-    border-radius:0 100% 100% 100%;
-
-}
-
-
-.center-knot{
-
-    width:18px;
-
-    height:18px;
-
-    background:#ff234f;
-
-    border-radius:50%;
-
-}
-
-
-
-/* ===========================
-   OPEN ANIMATION
-=========================== */
 
 
 .envelope.open .flap{
 
     transform:
+
     rotateX(180deg);
 
 }
@@ -443,25 +263,12 @@ body{
 
 .envelope.open.show-letter .letter{
 
+
     transform:
+
     translateX(-50%)
-    translateY(-110px);
 
-}
+    translateY(-150px);
 
-
-
-/* ===========================
- MOBILE
-=========================== */
-
-
-@media(max-width:600px){
-
-.envelope{
-
-    width:320px;
-
-}
 
 }
