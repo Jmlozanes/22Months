@@ -308,7 +308,7 @@ body{
 
     border-radius:0 0 8px 8px;
 
-    z-index:6;
+    z-index:4;
 
     overflow:hidden;
 
@@ -423,17 +423,17 @@ body{
 
 .envelope.open .flap{
 
-    transform:rotateX(180deg);
+    transform:
+        rotateX(180deg);
 
 }
+
 
 .envelope.open .letter{
 
     transform:
         translateX(-50%)
-        translateY(-120px);
-
-    transition:1.8s ease;
+        translateY(-170px);
 
 }
 
