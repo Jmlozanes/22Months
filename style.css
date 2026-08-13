@@ -187,11 +187,7 @@ body{
     position:absolute;
 
     left:50%;
-    bottom:10px;
-
-    transform:
-        translateX(-50%)
-        translateY(80px);
+    bottom:0;
 
     width:88%;
     height:82%;
@@ -200,10 +196,14 @@ body{
     justify-content:center;
     align-items:flex-end;
 
+    transform:
+        translateX(-50%)
+        translateY(120px);
+
     z-index:3;
 
     transition:
-    transform 1.8s cubic-bezier(.25,1,.5,1);
+        transform 1.8s ease;
 
 }
 
@@ -283,7 +283,7 @@ body{
 
     transform-origin:top;
 
-    z-index:5;
+    z-index:6;
 
     transition:1.8s ease;
 
@@ -425,7 +425,7 @@ body{
 
     transform:
         translateX(-50%)
-        translateY(-120px);
+        translateY(-80px);
 
 }
 
@@ -473,4 +473,25 @@ body{
 }
 .envelope.open .letter{
     z-index:7;
+}
+.envelope .letter{
+
+    opacity:0;
+
+}
+
+
+.envelope.open .letter{
+
+    opacity:1;
+
+}
+
+
+.envelope.open.show-letter .letter{
+
+    transform:
+        translateX(-50%)
+        translateY(-80px);
+
 }
