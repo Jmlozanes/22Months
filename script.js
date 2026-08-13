@@ -20,6 +20,12 @@ envelope.addEventListener("click", () => {
 
     envelope.classList.add("open");
 
+setTimeout(()=>{
+
+    envelope.classList.add("show-letter");
+
+},1200);
+
     // Optional music
     /*
     music.volume = 0.5;
