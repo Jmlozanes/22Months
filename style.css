@@ -17,12 +17,7 @@ body{
    BACKGROUND HEARTS
 =========================== */
 
-.background-hearts{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-}
+
 
 .background-hearts span{
     position:absolute;
